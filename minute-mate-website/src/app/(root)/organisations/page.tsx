@@ -1,6 +1,15 @@
-const Organisations: React.FC = () => { 
-    // this is temporary, but it's a good way to see if the app is loading
-    return  <h1>Organisations</h1>
+import { sql } from "@vercel/postgres";
+
+const Organisations: React.FC = async () => { 
+  const { rows } = await sql`SELECT * from Organisation`;
+
+  return <div>
+      {rows.map((row) => (
+        <div key={row.id}>
+          {row.name} 
+        </div>
+      ))}
+    </div>
   };
   
   export default Organisations;
