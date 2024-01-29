@@ -1,0 +1,5 @@
+- The following config is required
+	- organisations [[organisations]]
+	- projects [[projects]]
+	- tags [[tags]]
+-
